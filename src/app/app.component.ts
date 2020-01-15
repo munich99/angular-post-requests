@@ -9,12 +9,15 @@ import { HttpService } from './http.service'
 export class AppComponent implements OnInit  {
 
   ganzeListe;
+  shipping;
 
   constructor(public httpService:HttpService){}
 
   ngOnInit() {
+
     this.ganzeListe = this.httpService.sendGetRequest();
     console.log(this.ganzeListe);
+    
   }
 
  

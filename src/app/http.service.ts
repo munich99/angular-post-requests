@@ -6,15 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  apiUrl='api/docs.json';
+  apiUrl='/api/docs.json';
 
   constructor(public httpClient:HttpClient) { }
 
   sendGetRequest(){
-
-    let xx = this.httpClient.get(this.apiUrl);
-    console.log(xx, "ee")
-    return xx;
+    return this.httpClient.get(this.apiUrl);  
+    
   }
 
   funktionsUberpruefung(){
@@ -22,8 +20,6 @@ export class HttpService {
     return "Hallo vom Service";
   }
 
-  getShippingPrices(){
-    return this.httpClient.get('/assets/shipping.json');
-  }
+
 
 }
